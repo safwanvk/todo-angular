@@ -31,4 +31,10 @@ export class TodoService {
     const url = `${this.todoUrl}/${todo.id}`;
     return this.http.put(url, todo, httpOptions);
   }
+
+  // Delete Todo
+  deleteTodo(todo: Todo):Observable<Todo> {
+    const url = `${this.todoUrl}/${todo.id}`;
+    return this.http.delete<Todo>(url, httpOptions);
+  }
 }
